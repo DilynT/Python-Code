@@ -1,0 +1,25 @@
+```
+Welcome to the Senate Help Page
+    If you want to use specific commands address me properly.
+    Example: 'Sheev [command]' 'sheev [command]' '@The Sheev [command]'
+
+    Commands:
+    1. 'repeat'
+        Will repeat any text that follows the command.
+    2. 'year'
+        Show version information and credits to people.
+    3. 'assist me'
+        Displays said help window in direct message.
+    4. 'leavus'
+        Will exit the bot if the person is specified as the owner.
+    5. 'shitpost'
+        Should be self explanitory. It will post only the highest quality Prequel memes given they are in the directory provided. 
+    6. 'forecast <zipcode>'
+        Gives the current forcast for the zip code provided.
+    7. 'weather <city> <state abbrevation>'
+        Gives the channel weather input for the given location.
+
+``` ```
+    Credit:
+        Huge thanks to Cyclawps52 (https://github.com/cyclawps52) for providing me with the framework for the bot, as I can be very lazy, and probably helping and supporting me, a little more than I could ever hope for, with this and other projects.
+```

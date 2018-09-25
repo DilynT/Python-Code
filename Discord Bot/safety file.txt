@@ -1,0 +1,72 @@
+THIS IS WHERE I STORE BATCHES OF CODE INCASE I BREAK SOMETHING HORRIBLYBAD
+
+import discord
+import random
+
+from functions import *
+
+import settings
+settings.init()
+
+client = discord.Client()
+
+@client.event
+async def on_message(message):
+    #declaring needed shortcuts and variables
+    if message.author.bot:
+        return
+
+    command = message.content.startswith
+    author = '<@' + message.author.id + '>'
+    messageText = message.content
+    speaker = message.author.id
+    channel = message.channel
+    send = client.send_message
+    ttsCheck = False
+
+    #check if this message is a PM
+    if message.server is None:
+        await send(channel, 'Are you threatening me, Master Jedi?')
+        return
+
+    #check if bot was mentioned (directly or indirectly)
+    localID = "<@"
+    localID += str(settings.BOTID)
+    localID += ">"
+
+    if command('Sheev') or command(localID) or command('sheev'):
+        commandText=messageText.replace('Sheev ', "")
+        commandText=messageText.replace('sheev ', "")
+        localID+= ' '
+        commandText=commandText.replace(localID, "")
+        checkCommand=commandText.startswith
+
+        if checkCommand('repeat'):
+            commandText=commandText.replace('repeat', "", 1)
+            await send(channel, commandText, tts=False)
+            await client.delete_message(message)
+            return
+        elif checkCommand('year')
+            await send(channel, settings.VERSION, tts=False)
+            return
+        elif checkCommand('assistme')
+            helpfile = open('commands.txt', 'r')
+            commands = helpfile.read()
+            helpfile.close()
+            await send(message.author, commands)
+            await client.delete_message(message)
+            return
+        elif checkCommand('leaveus')
+            if(int(speaker)==int(settings.OWNER)):
+                await send(channel, ('https://i.gyazo.com/b997977c902a2ab90ba9f09edfc2f72b.gif'), tts=False)
+                exit()
+            else:
+                await send(channel, (author + 'https://i.gyazo.com/78756a27389e38fa08482b1968656758.gif'), tts=False)
+                return
+        else:
+            print(commandText)
+            await send(channel, 'Nani')
+    else: 
+        return
+
+client.run(settings.TOKEN)
